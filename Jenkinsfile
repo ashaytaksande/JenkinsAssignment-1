@@ -18,7 +18,7 @@ pipeline {
             }
             steps {
                 sh '''
-                scp -r -i ${key} ${pwd} ${destination}:/home/ubuntu/test/
+                scp -r -i ${key} $(pwd) ${destination}:/home/ubuntu/test/
                 '''
                 sh ' echo "successfully copied git files to test server" '
                
