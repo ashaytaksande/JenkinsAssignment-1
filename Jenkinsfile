@@ -36,7 +36,7 @@ pipeline {
             }
             steps {
                  sh '''
-                scp -r -i ${key} ${pwd} ${destination}:/home/ubuntu/prod/
+                scp -r -i ${key} $(pwd) ${destination}:/home/ubuntu/prod/
                 '''
                 sh ' echo "successfully copied git files to prod server" '
             }
