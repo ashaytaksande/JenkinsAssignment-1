@@ -19,7 +19,7 @@ pipeline {
             steps {
                 sh '''
                 mkdir -p /home/ashay/testlocal && cp -r $(pwd)/ /home/ashay/testlocal/ && chown -R ashay:ashay /home/ashay/testlocal
-                scp -r -i ${key} /home/ashay/testlocal/ ${destination}:/home/ashay/test/
+                scp -o StrictHostKeyChecking=no -r -i ${key} /home/ashay/testlocal/ ${destination}:/home/ashay/test/
                 echo "successfully copied git files to test server"
                 '''              
             }
@@ -37,7 +37,7 @@ pipeline {
             steps {
                  sh '''
                  mkdir -p /home/ashay/prodlocal && cp -r $(pwd)/ /home/ashay/prodlocal/ && chown -R ashay:ashay /home/ashay/prodlocal
-                 scp -r -i ${key} /home/ashay/prodlocal/ ${destination}:/home/ashay/prod/
+                 scp -o StrictHostKeyChecking=no -r -i ${key} /home/ashay/prodlocal/ ${destination}:/home/ashay/prod/
                  echo "successfully copied git files to prod server"
                 '''  
             }
