@@ -30,7 +30,7 @@ pipeline {
             }
             when {
                 expression {
-                    branchName == 'prod'
+                    branchName == 'master'
                 }
             }
             steps {
