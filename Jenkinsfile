@@ -18,7 +18,7 @@ pipeline {
             }
             steps {
                 sh '''
-                 scp -o StrictHostKeyChecking=no -r -i ${key} $(pwd)/ ${destination}:/home/ashay/test/
+                 scp -O -o StrictHostKeyChecking=no -r -i ${key} $(pwd)/ ${destination}:/home/ashay/test/
                  echo "successfully copied git files to test server"
                 '''              
             }
@@ -35,7 +35,7 @@ pipeline {
             }
             steps {
                  sh '''
-                 scp -o StrictHostKeyChecking=no -r -i ${key} $(pwd)/ ${destination}:/home/ashay/prod/
+                 scp -O -o StrictHostKeyChecking=no -r -i ${key} $(pwd)/ ${destination}:/home/ashay/prod/
                  echo "successfully copied git files to prod server"
                 '''  
             }
